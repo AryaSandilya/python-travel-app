@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent any
 
     stages{
@@ -28,6 +28,31 @@ pipeline {
                 sh '''
                 docker run -d -p 5000:5000 --name travel-container travel-app
                 '''
+            }
+        }
+    }
+}*/
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build --no-cache -t travel-app .'
+            }
+        }
+
+        stage('Stop Old Container') {
+            steps {
+                bat 'docker rm -f travel-container || exit 0'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                bat 'docker run -d -p 5000:5000 --name travel-container travel-app'
             }
         }
     }
