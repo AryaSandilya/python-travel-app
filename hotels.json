@@ -1,0 +1,5 @@
+[
+    {"city": "Delhi", "hotel": "Taj Palace", "price": 8000},
+    {"city": "Mumbai", "hotel": "Trident", "price": 9000},
+    {"city": "Goa", "hotel": "Beach Resort", "price": 6000}
+]
