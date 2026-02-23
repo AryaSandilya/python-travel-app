@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    #return "Welcome to Travel Booking App This is a new world, Book your tickets with 50% discount. AirBNB and OYO are our partners."
-    return "Version 2 returned"
+    return "Welcome to Travel Booking App This is a new world, Book your tickets with 50% discount. AirBNB and OYO are our partners."
+    #return "Version 2 returned"
 @app.route('/hotels')
 def hotels():
     with open('hotels.json') as f:
