@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to Travel Booking App, AirBNB! and OYO are our partners."
+    return "Welcome to Travel Booking App, Book your tickets with 50% discount. AirBNB and OYO are our partners."
 
 @app.route('/hotels')
 def hotels():
