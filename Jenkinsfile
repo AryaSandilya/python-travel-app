@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    stages{
         stage('Clone Code') {
-            steps {
-                git 'https://github.com/AryaSandilya/python-travel-app.git/'
+        steps {
+                git branch: 'main',
+                    url: 'https://github.com/AryaSandilya/python-travel-app.git'
             }
         }
 
