@@ -1,17 +1,23 @@
 from flask import Flask, jsonify
-import json
 
 app = Flask(__name__)
 
+# Data: Destinations for your tourism project
+tourist_spots = [
+    {"city": "Paris", "attraction": "Eiffel Tower", "type": "History"},
+    {"city": "Bali", "attraction": "Uluwatu Temple", "type": "Nature"},
+    {"city": "New York", "attraction": "Times Square", "type": "Urban"},
+    {"city": "Rome", "attraction": "Colosseum", "type": "History"}
+]
+
 @app.route('/')
 def home():
-    return "Welcome to Travel Booking App This is a new world, Book your tickets with 50% discount. AirBNB and OYO are our partners."
-    #return "Version 2 returned"
-@app.route('/hotels')
-def hotels():
-    with open('hotels.json') as f:
-        data = json.load(f)
-    return jsonify(data)
+    return "<h1>Tourism Dashboard API</h1><p>Visit /api/destinations to see spots.</p>"
 
-if __name__ == '__main__':
+@app.route('/api/destinations')
+def get_spots():
+    return jsonify(tourist_spots)
+
+if __name__ == "__main__":
+    # Must use 0.0.0.0 for Docker access
     app.run(host='0.0.0.0', port=5000)
