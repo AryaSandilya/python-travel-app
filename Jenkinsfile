@@ -3,6 +3,19 @@ pipeline {
 
     stages {
 
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Checkout Latest Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/AryaSandilya/python-travel-app.git'
+            }
+        }
+
         stage('Build Image') {
             steps {
                 bat 'docker build --no-cache -t travel-app .'
