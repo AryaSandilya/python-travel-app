@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/travel-app.git'
+                git 'https://github.com/AryaSandilya/python-travel-app.git/'
             }
         }
 
