@@ -12,7 +12,7 @@ tourist_spots = [
 
 @app.route('/')
 def home():
-    return "<h1>Tourism Dashboard API</h1><p>Visit /api/destinations to see spots.</p>"
+    return "<h1>New Tourism Dashboard API</h1><p>Visit /api/destinations to see spots.</p>"
 
 @app.route('/api/destinations')
 def get_spots():
